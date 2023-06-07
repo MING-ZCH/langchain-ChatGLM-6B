@@ -25,7 +25,7 @@
 
 🌐 [AutoDL 镜像](https://www.codewithgpu.com/i/imClumsyPanda/langchain-ChatGLM/langchain-ChatGLM)
 
-📓 [ModelWhale 在线运行项目](https://www.heywhale.com/mw/project/643977aa446c45f4592a1e59)
+📓 [ModelWhale 在线运行项目](https://www.heywhale.com/mw/project/6480b5e84fc1b36082e59060)
 
 ## 变更日志
 
