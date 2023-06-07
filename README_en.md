@@ -1,4 +1,4 @@
-# ChatGLM Application with Local Knowledge Implementation
+# langchain-ChatGLM-6B
 
 ## Introduction
 
@@ -20,38 +20,6 @@
 
 📓 [ModelWhale online notebook](https://www.heywhale.com/mw/project/643977aa446c45f4592a1e59)
 
-## Changelog
-
-**[2023/04/15]**
-
-   1. refactor the project structure to keep the command line demo [cli_demo.py](cli_demo.py) and the Web UI demo [webui.py](webui.py) in the root directory.
-   2. Improve the Web UI by modifying it to first load the model according to the default option of [configs/model_config.py](configs/model_config.py) after running the Web UI, and adding error messages, etc.
-   3. Update FAQ.
-
-**[2023/04/12]**
-
-   1. Replaced the sample files in the Web UI to avoid issues with unreadable files due to encoding problems in Ubuntu;
-   2. Replaced the prompt template in `knowledge_based_chatglm.py` to prevent confusion in the content returned by ChatGLM, which may arise from the prompt template containing Chinese and English bilingual text.
-
-**[2023/04/11]**
-
-   1. Added Web UI V0.1 version (thanks to [@liangtongt](https://github.com/liangtongt));
-   2. Added Frequently Asked Questions in `README.md` (thanks to [@calcitem](https://github.com/calcitem) and [@bolongliu](https://github.com/bolongliu));
-   3. Enhanced automatic detection for the availability of `cuda`, `mps`, and `cpu` for LLM and Embedding model running devices;
-   4. Added a check for `filepath` in `knowledge_based_chatglm.py`. In addition to supporting single file import, it now supports a single folder path as input. After input, it will traverse each file in the folder and display a command-line message indicating the success of each file load.
-
-5. **[2023/04/09]**
-
-   1. Replaced the previously selected `ChatVectorDBChain` with `RetrievalQA` in `langchain`, effectively reducing the issue of stopping due to insufficient video memory after asking 2-3 times;
-   2. Added `EMBEDDING_MODEL`, `VECTOR_SEARCH_TOP_K`, `LLM_MODEL`, `LLM_HISTORY_LEN`, `REPLY_WITH_SOURCE` parameter value settings in `knowledge_based_chatglm.py`;
-   3. Added `chatglm-6b-int4` and `chatglm-6b-int4-qe`, which require less GPU memory, as LLM model options;
-   4. Corrected code errors in `README.md` (thanks to [@calcitem](https://github.com/calcitem)).
-
-**[2023/04/07]**
-
-   1. Resolved the issue of doubled video memory usage when loading the ChatGLM model (thanks to [@suc16](https://github.com/suc16) and [@myml](https://github.com/myml));
-   2. Added a mechanism to clear video memory;
-   3. Added `nghuyong/ernie-3.0-nano-zh` and `nghuyong/ernie-3.0-base-zh` as Embedding model options, which consume less video memory resources than `GanymedeNil/text2vec-large-chinese` (thanks to [@lastrei](https://github.com/lastrei)).
 
 ## How to Use
 
@@ -221,27 +189,3 @@ ChatGLM's answer after using LangChain to access the README.md file of the ChatG
 >4. Introduce more evaluation metrics: Incorporate additional evaluation metrics to assess the model's performance, which can help identify the shortcomings and limitations of ChatGLM-6B.
 >5. Enhance the model architecture: Improve ChatGLM-6B's model architecture to boost its performance and capabilities. For example, employ larger neural networks or refined convolutional neural network structures.
 
-## Roadmap
-
-- [x] Implement LangChain + ChatGLM-6B for local knowledge application
-- [x] Unstructured file access based on langchain
-   - [x].md
-   - [x].pdf
-   - [x].docx
-   - [x].txt
-- [ ] Add support for more LLM models
-   - [x] THUDM/chatglm-6b
-   - [x] THUDM/chatglm-6b-int4
-   - [x] THUDM/chatglm-6b-int4-qe
-- [ ] Add Web UI DEMO
-   - [x] Implement Web UI DEMO using Gradio
-   - [x] Add output and error messages
-   - [x] Citation callout
-   - [ ] Knowledge base management
-     - [x] QA based on selected knowledge base
-     - [x] Add files/folder to knowledge base
-     - [ ] Add files/folder to knowledge base
-   - [ ] Implement Web UI DEMO using Streamlit
-- [ ] Add support for API deployment
-  - [x] Use fastapi to implement API
-  - [ ] Implement Web UI DEMO for API calls
