@@ -1,4 +1,4 @@
-# langchain-ChatGLM-6B
+# langchain-ChatGLM-6B(含Model Whale/百度Paddle在线部署）
 
 ## 介绍
 
